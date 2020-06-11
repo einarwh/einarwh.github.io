@@ -511,6 +511,8 @@ Error message and password prompt
 
 <li>Lambdas and Closures, oh my! (ROOTS 2012)</li>
 
+<li>Levende API-design med DDD og hypermedia (Dataforeningen, 18. Jun)</li>
+
 <li>Live Lambda Calculus (JavaZone 2017)</li>
 
 <li>Live Lambda Calculus (NDC Oslo 2017)</li>
@@ -9600,7 +9602,7 @@ Ever wanted to control some hardware from your existing .NET application? Wanted
 <div created="20190319093725094" modified="20191130092508445" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20200419170803422" list="[[The Escher School of Fish (ClojuTRE 2020, 8.-9. Oct)]] [[Submitted talks pending notification 2020]] [[Upcoming accepted talks 2020]] [[Delivered talks]] [[Hypermedia in the Wizard's Tower (NDC London 2014)]] [[Rejected talks]] [[Cancelled talks]]" modified="20200419181534593" title="$:/StoryList">
+<div created="20200611145011381" list="[[Levende API-design med DDD og hypermedia (Dataforeningen, 18. Jun)]] [[Submitted talks pending notification 2020]] [[Upcoming accepted talks 2020]] [[Delivered talks]] [[Evolving architecture with DDD and Hypermedia (DDD Europe 2020, 6.-7. Feb)]] [[Rejected talks]] [[Cancelled talks]]" modified="20200611145207990" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190320213551758" modified="20190320213551759" title="$:/temp/advancedsearch">
@@ -10335,8 +10337,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191110145619687" dependents="" description="Basic theme" modified="20191110145619687" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20190319085237140" modified="20200419181325427" title="$:/temp/search">
-<pre>school</pre>
+<div created="20190319085237140" modified="20200611145009938" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20191110145619598" modified="20191110145619598" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
 <pre>loaded</pre>
@@ -10789,7 +10791,7 @@ What does it mean to be a good software developer? What story can I tell myself 
 
 Einar W. Høst is a software developer at NRK, the Norwegian public broadcaster. He enjoys domain modelling, API design and computer programming. In his spare time he dabbles in impractical coding projects aimed at having fun with the djinns of the computer. He has a PhD in Computer Science from the University of Oslo and used to be a software craftsman.</pre>
 </div>
-<div conference="NDC Oslo" created="20191129133507352" date="2020.06.08" duration="10m" modified="20200303201548805" status="Accepted" tags="2020 accepted lightning-talk ndc-oslo submitted" title="Death of a Craftsman (NDC Oslo 2020, 8.-12. Jun)" year="2020">
+<div conference="NDC Oslo" created="20191129133507352" date="2020.06.08" duration="10m" modified="20200611145146153" status="Accepted" tags="presented 2020 delivered accepted lightning-talk ndc-oslo submitted" title="Death of a Craftsman (NDC Oslo 2020, 8.-12. Jun)" year="2020">
 <pre>! Death of a Craftsman: A software developer identity crisis
 
 Conference: NDC Oslo 2020 (8. - 12. Jun)
@@ -10798,6 +10800,7 @@ Status:
 
 * Submitted 29. Nov 2019
 * Accepted 3. Mar 2020
+* Presented 10. Jun 2020
 
 Notification: 3. Mar 2020
 
@@ -11580,6 +11583,21 @@ Recording: https://vimeo.com/52323919
 Seems you can't be a hip geek these days and not know your way around lambdas and closures. What are they really? Are they the same thing? Maybe? Maybe not? Who knows? What about first class functions? Higher order functions? How is a poor old OO head supposed to cope with it all? There's a whole new language to learn, in order to gain entry to the hipster crowd of the functionally enabled.
 
 In this talk we'll set the record straight and compare and contrast the different terms. We'll also blaze through some practical examples in C# to show you what lambdas and closures are good for, and why the hipsters are so hip about them. You'll be too.</pre>
+</div>
+<div conference="Dataforeningen" created="20200611145214036" date="18.06.2020" duration="50" modified="20200611145449246" status="Accepted" tags="norsk 2020 dataforeningen accepted ddd submitted hypermedia talk" title="Levende API-design med DDD og hypermedia (Dataforeningen, 18. Jun)" year="2020">
+<pre>! Levende API-design med DDD og hypermedia 
+
+Meetup: Dataforeningen 18. Jun 2020
+
+Status: Accepted
+
+!! Abstract
+
+I NRK TV har vi begynt å bruke hypermedia i API'et som serverer klientene seerne bruker for å strømme TV-innhold. Vi bruker hyperlenker for å tilby relevante navigasjonsmuligheter avhengig av scenarier og applikasjonstilstander. På den måten komponerer vi API'ets endepunkter til å danne danne komplette brukerhistorier. Hyperlenker lar oss også binde sammen kontekster som vi holder adskilt for å begrense kompleksitet. Klientene kan sømløst navigere mellom redaksjonelt innhold, katalogoversikt, avspilling og personaliserte anbefalinger uten å legge merke til eller bry seg om at de ulike kontekstene kan understøttes av adskilte applikasjoner med ulike oppetidskrav og adskilte feilmoduser. Siden hyperlenker lar oss tilby flere veier gjennom API'et og mer enn én måte å nå et mål på, hjelper de oss også å utvikle applikasjonene våre uten behov for koordinering og synkronisering av oppdateringer på tvers av alle klienter. Klienter kan velge å ta i bruk ny eller forbedret funksjonalitet når de selv ønsker det. Jeg vil vise noen praktiske eksempler på hvordan vi har gjort det i vårt API.
+
+!! Speaker bio
+
+Einar W. Høst er programvareutvikler i NRK TV, strømmetjenesten til NRK. Han er opptatt av sosio-tekniske faktorer, domenemodellering og API-design. Iblant går han turer for å tenke igjennom ting. </pre>
 </div>
 <div conference="JavaZone" created="20190319162803576" date="2017.09.23" duration="60m" modified="20190319163025929" status="Withdrawn" tags="jonas 2017 lambda-calculus withdrawn accepted submitted javazone" title="Live Lambda Calculus (JavaZone 2017)" year="2017">
 <pre>! Live Lambda Calculus
@@ -12515,16 +12533,15 @@ Status: Presented.
 
 Det er for lettvint å si at teknisk gjeld skyldes klønete programmering utført av inkompetente utviklere som jobber under tidspress. Jeg tror at uegnede og vage abstraksjoner forårsaket av mangelfull domenemodellering er den sentrale driveren for teknisk gjeld. Det betyr at nøkkelen til å redusere teknisk gjeld er bedre og mer eksplisitt formulert domeneforståelse snarere enn rent tekniske grep.</pre>
 </div>
-<div conference="ClojuTRE" created="20200419171128442" date="2020.10.08" duration="20m" modified="20200419181557209" status="draft" tags="clojurescript 2020 clojure clojutre submitted functional-geometry escher talk" title="The Escher School of Fish (ClojuTRE 2020, 8.-9. Oct)" year="2020">
+<div conference="ClojuTRE" created="20200419171128442" date="2020.10.08" duration="20m" modified="20200611145115128" status="Cancelled" tags="corona-virus 2020 cancelled clojurescript clojure clojutre submitted functional-geometry escher talk" title="The Escher School of Fish (ClojuTRE 2020, 8.-9. Oct)" year="2020">
 <pre>! The Escher School of Fish
 
 Conference: ~ClojuTRE 2020 (8.-9. Oct)
 
-Notification by ?
-
 Status: 
 
 * Submitted (19. April)
+* Cancelled (22. May)
 
 !! Abstract
 
