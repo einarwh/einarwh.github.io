@@ -5921,54 +5921,107 @@ var $author$project$Aoc11b$check = F2(
 			return $elm$core$Maybe$Nothing;
 		}
 	});
-var $author$project$Aoc11b$lookAt = F2(
-	function (layout, _v0) {
-		var rowNo = _v0.a;
-		var colNo = _v0.b;
-		return A2(
-			$elm$core$Maybe$withDefault,
-			$author$project$Aoc11b$Floor,
-			A2(
-				$author$project$Aoc11b$check,
-				layout,
-				_Utils_Tuple2(rowNo, colNo)));
+var $author$project$Aoc11b$lookDir = F3(
+	function (dir, layout, xy) {
+		lookDir:
+		while (true) {
+			var next = dir(xy);
+			var _v0 = A2($author$project$Aoc11b$check, layout, next);
+			if (_v0.$ === 'Nothing') {
+				return $author$project$Aoc11b$Floor;
+			} else {
+				var space = _v0.a;
+				if (space.$ === 'Seat') {
+					var status = space.a;
+					return $author$project$Aoc11b$Seat(status);
+				} else {
+					var $temp$dir = dir,
+						$temp$layout = layout,
+						$temp$xy = next;
+					dir = $temp$dir;
+					layout = $temp$layout;
+					xy = $temp$xy;
+					continue lookDir;
+				}
+			}
+		}
 	});
-var $author$project$Aoc11b$findDirectNeighborPositions = F3(
+var $author$project$Aoc11b$findPositionsInDirection = F3(
 	function (layout, rowNo, colNo) {
 		var lst = _List_fromArray(
 			[
-				A2(
-				$author$project$Aoc11b$lookAt,
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v0) {
+					var r = _v0.a;
+					var c = _v0.b;
+					return _Utils_Tuple2(r - 1, c - 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo - 1, colNo - 1)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v1) {
+					var r = _v1.a;
+					var c = _v1.b;
+					return _Utils_Tuple2(r - 1, c);
+				},
 				layout,
-				_Utils_Tuple2(rowNo - 1, colNo)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v2) {
+					var r = _v2.a;
+					var c = _v2.b;
+					return _Utils_Tuple2(r - 1, c + 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo - 1, colNo + 1)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v3) {
+					var r = _v3.a;
+					var c = _v3.b;
+					return _Utils_Tuple2(r, c - 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo, colNo - 1)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v4) {
+					var r = _v4.a;
+					var c = _v4.b;
+					return _Utils_Tuple2(r, c + 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo, colNo + 1)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v5) {
+					var r = _v5.a;
+					var c = _v5.b;
+					return _Utils_Tuple2(r + 1, c - 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo + 1, colNo - 1)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v6) {
+					var r = _v6.a;
+					var c = _v6.b;
+					return _Utils_Tuple2(r + 1, c);
+				},
 				layout,
-				_Utils_Tuple2(rowNo + 1, colNo)),
-				A2(
-				$author$project$Aoc11b$lookAt,
+				_Utils_Tuple2(rowNo, colNo)),
+				A3(
+				$author$project$Aoc11b$lookDir,
+				function (_v7) {
+					var r = _v7.a;
+					var c = _v7.b;
+					return _Utils_Tuple2(r + 1, c + 1);
+				},
 				layout,
-				_Utils_Tuple2(rowNo + 1, colNo + 1))
+				_Utils_Tuple2(rowNo, colNo))
 			]);
 		return lst;
 	});
@@ -5980,35 +6033,35 @@ var $author$project$Aoc11b$spaceToStatus = function (space) {
 		return $elm$core$Maybe$Nothing;
 	}
 };
-var $author$project$Aoc11b$findDirectNeighborSeats = F3(
+var $author$project$Aoc11b$findSeatsInDirection = F3(
 	function (layout, rowNo, colNo) {
 		return A2(
 			$elm$core$List$filterMap,
 			$author$project$Aoc11b$spaceToStatus,
-			A3($author$project$Aoc11b$findDirectNeighborPositions, layout, rowNo, colNo));
+			A3($author$project$Aoc11b$findPositionsInDirection, layout, rowNo, colNo));
 	});
-var $author$project$Aoc11b$countOccupiedDirectNeighborSeats = F3(
+var $author$project$Aoc11b$countOccupiedSeatsInDirection = F3(
 	function (layout, rowNo, colNo) {
 		return $author$project$Aoc11b$countOccupiedSeats(
-			A3($author$project$Aoc11b$findDirectNeighborSeats, layout, rowNo, colNo));
+			A3($author$project$Aoc11b$findSeatsInDirection, layout, rowNo, colNo));
 	});
-var $author$project$Aoc11b$evolveSeatDirectNeighbors = F4(
+var $author$project$Aoc11b$evolveSeatInDirection = F4(
 	function (layout, rowNo, colNo, seat) {
-		var occupied = A3($author$project$Aoc11b$countOccupiedDirectNeighborSeats, layout, rowNo, colNo);
+		var occupied = A3($author$project$Aoc11b$countOccupiedSeatsInDirection, layout, rowNo, colNo);
 		if (seat.$ === 'Empty') {
 			return (!occupied) ? $author$project$Aoc11b$Occupied : $author$project$Aoc11b$Empty;
 		} else {
-			return (occupied >= 4) ? $author$project$Aoc11b$Empty : $author$project$Aoc11b$Occupied;
+			return (occupied >= 5) ? $author$project$Aoc11b$Empty : $author$project$Aoc11b$Occupied;
 		}
 	});
-var $author$project$Aoc11b$evolve1 = function (layout) {
-	return A2($author$project$Aoc11b$evolveLayout, $author$project$Aoc11b$evolveSeatDirectNeighbors, layout);
+var $author$project$Aoc11b$evolve2 = function (layout) {
+	return A2($author$project$Aoc11b$evolveLayout, $author$project$Aoc11b$evolveSeatInDirection, layout);
 };
 var $author$project$Aoc11b$update = F2(
 	function (msg, model) {
 		return _Utils_Tuple2(
 			{
-				layout: $author$project$Aoc11b$evolve1(model.layout)
+				layout: $author$project$Aoc11b$evolve2(model.layout)
 			},
 			$elm$core$Platform$Cmd$none);
 	});
