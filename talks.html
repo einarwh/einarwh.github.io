@@ -589,6 +589,8 @@ Error message and password prompt
 
 <li>Real world hypermedia at NRK TV (NDC Oslo 2019, 19.-21. Jun)</li>
 
+<li>Real-world API modularization with DDD and Hypermedia (muCon 2021, 13.-14. Apr)</li>
+
 <li>Recursive art with composable objects (NDC Oslo 2020, 8.-12. Jun)</li>
 
 <li>Recursive art with composable objects (Update Conference 2020, 12.-13. Nov)</li>
@@ -9620,7 +9622,7 @@ Ever wanted to control some hardware from your existing .NET application? Wanted
 <div created="20190319093725094" modified="20191130092508445" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[Submitted talks pending notification 2021]] [[Upcoming accepted talks 2021]] [[Submitted talks pending notification 2020]] [[Upcoming accepted talks 2020]] [[Delivered talks]] [[Rejected talks]] [[Cancelled talks]]" title="$:/StoryList">
+<div created="20210206182329713" list="[[Submitted talks pending notification 2021]] [[Upcoming accepted talks 2021]] [[Submitted talks pending notification 2020]] [[Upcoming accepted talks 2020]] [[Delivered talks]] [[Cancelled talks]]" modified="20210208170400493" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190320213551758" modified="20190320213551759" title="$:/temp/advancedsearch">
@@ -10355,7 +10357,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191110145619687" dependents="" description="Basic theme" modified="20191110145619687" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20190319085237140" modified="20210205183239782" title="$:/temp/search">
+<div created="20190319085237140" modified="20210207093645143" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20191110145619598" modified="20191110145619598" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
@@ -12353,6 +12355,40 @@ At NRK TV we are gradually introducing hypermedia in the API that serves the cli
 !! Speaker bio
 
 Einar W. Høst is not a software craftsman; he is a genuine, ~PhD-certified ivory tower zealot. His heretic views include thinking away from the keyboard and making drawings to understand things better. He does domain modelling, API design and computer programming at NRK.</pre>
+</div>
+<div conference="muCon" created="20210206182408990" date="2021.04.13" duration="45" modified="20210208170555990" status="Submitted" tags="mucon 2021 ddd submitted hypermedia talk" title="Real-world API modularization with DDD and Hypermedia (muCon 2021, 13.-14. Apr)" year="2021">
+<pre>! Real-world API modularization with DDD and Hypermedia
+
+Conference: muCon 2021 (13. - 14. April)
+
+Status: Submitted (7. Feb)
+
+!! Elevator pitch 
+
+The real-world story of using DDD and hypermedia to modularize the monolithic API for NRK TV to improve both reliability and development speed for new features.
+
+!! Abstract
+
+NRK TV is a TV streaming service for the Norwegian public, serving hundreds of thousands of users every day. This is the story of how we turned an increasingly complex and stagnating monolithic API into a more rapidly evolving modular API. Two key elements in the transformation are hypermedia and domain-driven design. We use links to tie together bounded domain contexts that we keep separate to contain complexity. Clients can seamlessly navigate between e.g. editorial content, catalog, playback and personalized recommendations, without noticing or caring that different contexts could be supported by separate backends with varying degrees of criticality and separate failure modes. Since links enable us to support multiple paths through the API and more than one way to reach a goal, they also help us evolve our applications without having to coordinate updates for all our clients at the same time. Rather, clients can opt-in to new or improved functionality when it suits them. 
+
+!! Speaker bio
+
+Einar W. Høst is not a software craftsman; he is a genuine, ~PhD-certified ivory tower zealot. His heretic views include thinking away from the keyboard and making drawings to understand things better. He does domain modelling, API design and computer programming at NRK.
+
+!! Previous talks
+
+I have a list of all my talks here:
+https://einarwh.github.io/talks.html#Delivered%20talks
+
+Some videos:
+Technical debt isn't technical (DDD Europe 2019) 
+https://www.youtube.com/watch?v=d2Ddo8OV7ig
+Escher in Elm (Øredev 2019) 
+https://vimeo.com/372227316
+Hypermedia in the Wizard's Tower (NDC London 2014)
+https://vimeo.com/113698604
+
+</pre>
 </div>
 <div conference="NDC Oslo" created="20191128231401097" date="2020.06.08" duration="60m" modified="20200228160513896" status="Rejected" tags="rejected 2020 escher csharp submitted ndc-oslo talk live-coding" title="Recursive art with composable objects (NDC Oslo 2020, 8.-12. Jun)" year="2020">
 <pre>! Recursive art with composable objects
