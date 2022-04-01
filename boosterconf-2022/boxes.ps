@@ -1,0 +1,51 @@
+/box {
+  3 dict begin 
+    /side exch def 
+    /y exch def 
+    /x exch def 
+
+    x y moveto
+    side 0 rlineto
+    0 side rlineto 
+    side neg 0 rlineto
+    closepath
+  end
+} def 
+
+/random-gray {
+  rand 100 mod 100 div
+  setgray
+} def 
+
+/draw-box {
+  box random-gray fill
+} def
+
+/draw-row {                  % y s
+  0 1 70                     % y s j k l
+  {                          % y s k
+    1 index                  % y s i s 
+    mul                      % y s x
+    2 index                  % y s x y
+    2 index                  % y s x y s
+    draw-box                 % y s 
+  } for                      % y s 
+  pop pop
+} def
+
+/draw-page {
+  0 1 99
+  {                           % k
+    3 dup                     % k s s
+    3 -1 roll                 % s s k 
+    mul                       % s y
+    exch                      % y s
+    draw-row
+  } for
+} def 
+
+72 25.4 div dup scale
+
+draw-page
+
+show-page
