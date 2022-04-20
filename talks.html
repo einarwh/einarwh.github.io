@@ -9693,7 +9693,7 @@ Ever wanted to control some hardware from your existing .NET application? Wanted
 <div created="20190319093725094" modified="20211208132823990" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20220420155638152" list="[[Submitted talks pending notification 2022]] [[Socio-tech lead: How to have impact as a developer (DDD Europe 2022, 22.-24. Jun)]] [[Upcoming accepted talks 2022]] [[Delivered talks]] [[Rejected talks]] [[Cancelled talks]]" modified="20220420155638153" title="$:/StoryList">
+<div created="20220420203223215" list="[[A Case for Handwritten API Documentation (draft)]] [[Submitted talks pending notification 2022]] [[Upcoming accepted talks 2022]] [[Delivered talks]] [[Rejected talks]] [[A Case for Handwritten API Documentation (Booster 2022, 23.-25. Mar)]] [[Cancelled talks]]" modified="20220420203647885" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190320213551758" modified="20190320213551759" title="$:/temp/advancedsearch">
@@ -10428,8 +10428,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191110145619687" dependents="" description="Basic theme" modified="20191110145619687" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20190319085237140" modified="20220325205456429" title="$:/temp/search">
-<pre></pre>
+<div created="20190319085237140" modified="20220420203645515" title="$:/temp/search">
+<pre>draft</pre>
 </div>
 <div created="20191110145619598" modified="20191110145619598" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
 <pre>loaded</pre>
@@ -10561,12 +10561,12 @@ I think we agree that APIs need documentation to make them easier to consume cor
 
 Einar W. Høst is a computer at NRK, the Norwegian public broadcaster. He thinks that programs should be written for people to read and also for machines to laugh at.</pre>
 </div>
-<div conference="???" created="20210907074231931" date="???" duration="10m" modified="20210907080111885" status="draft" tags="draft lightning-talk" title="A Case for Handwritten API Documentation (draft)" year="2022">
+<div conference="???" created="20210907074231931" date="???" duration="10m" modified="20220420204337901" status="draft" tags="draft" title="A Case for Handwritten API Documentation (draft)" year="2022">
 <pre>! A Case for Handwritten API Documentation
 
 !! Abstract
 
-I think we agree that APIs need documentation to make them easier to consume correctly for clients. It is common to use tools to generate such documentation, with the rationale that it saves work and never goes out of sync - if the API changes, the documentation changes with it. This is seen as a good thing. But this also means that there is no stable specification for what the API should or shouldn't do, there is nothing that connects behavior today to behavior tomorrow! There is no API interface, there is just an API implementation, and you've reached the end game of Hyrum's law from the start. In addition, the generated documentation is often of low quality, since there are many things that are worth specifying or explaining that cannot be gleaned from the implemenation. In this talk, I'll argue that it is important to provide not just documentation, but a specification for your API, an agreed-upon contract between the client and the server. The contract cannot be changed willy-nilly or inadvertently by changes in the implementation. Instead, the contract is something to collaborate and negotiate over. For this to be possible, the API documentation cannot be reverse engineered from the implementation. It must be decoupled and authored as a separate entity - much like a test is independent from the code it tests. It must be written by hand.
+APIs must be documented to make it easier for clients to use them as intended. It is common to use tools to generate such documentation from the running API itself, with the rationale that it saves work and that the generated documentation never goes out of sync - if the API changes, the documentation changes with it. But this also means that there is no stable specification for what the API should or shouldn't do, there is nothing that connects behavior today to behavior tomorrow! There is no API interface, there is just an API implementation, and we've reached the end game of Hyrum's law from the start. In addition, the generated documentation is often of low quality, since there are many things that are worth specifying or explaining that cannot be gleaned from the implementation. In this talk, I'll argue that it is important to provide not just documentation, but a specification for an API, an agreed-upon contract between the client and the server. Such a contract should not be changed willy-nilly or inadvertently by changes in the implementation. Instead, the contract is something to collaborate and negotiate over. For this to be possible, the API documentation cannot be reverse engineered from the implementation. It must be decoupled and authored as a separate entity - much like a test is independent from the code it tests. It must be written by hand.
 
 !! Speaker bio
 
