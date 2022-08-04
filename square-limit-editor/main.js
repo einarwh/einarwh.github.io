@@ -6221,7 +6221,22 @@ var $author$project$Main$createSvgLine = F2(
 		var pathId = line.id;
 		var dStr = 'M' + (x1Str + (' ' + (y1Str + (' C ' + (xCp1Str + (' ' + (yCp1Str + (', ' + (xCp2Str + (' ' + (yCp2Str + (', ' + (x2Str + (' ' + y2Str))))))))))))));
 		switch (status.$) {
-			case 'NormalLine':
+			case 'PassiveLine':
+				return _List_fromArray(
+					[
+						A2(
+						$elm$svg$Svg$path,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$id(pathId),
+								$elm$svg$Svg$Attributes$d(dStr),
+								$elm$svg$Svg$Attributes$stroke('black'),
+								$elm$svg$Svg$Attributes$strokeWidth('1'),
+								$elm$svg$Svg$Attributes$fill('none')
+							]),
+						_List_Nil)
+					]);
+			case 'ActiveLine':
 				return _List_fromArray(
 					[
 						A2(
@@ -6539,6 +6554,8 @@ var $author$project$Main$getMessageElement = function (model) {
 			return $elm$html$Html$text('Hovering...' + model.status);
 	}
 };
+var $author$project$Main$ActiveLine = {$: 'ActiveLine'};
+var $author$project$Main$PassiveLine = {$: 'PassiveLine'};
 var $author$project$Main$SelectedLine = {$: 'SelectedLine'};
 var $author$project$Main$createCurrentDrawingLine = F2(
 	function (startPos, endPos) {
@@ -6559,13 +6576,13 @@ var $author$project$Main$createCurrentDrawingLine = F2(
 				]),
 			_List_Nil);
 	});
-var $author$project$Main$NormalLine = {$: 'NormalLine'};
-var $author$project$Main$toSvgLines = function (lines) {
-	return A2(
-		$elm$core$List$concatMap,
-		$author$project$Main$createSvgLine($author$project$Main$NormalLine),
-		lines);
-};
+var $author$project$Main$toSvgLines = F2(
+	function (status, lines) {
+		return A2(
+			$elm$core$List$concatMap,
+			$author$project$Main$createSvgLine(status),
+			lines);
+	});
 var $author$project$Main$HoverLine = {$: 'HoverLine'};
 var $author$project$Main$tryFind = F2(
 	function (pred, list) {
@@ -6597,7 +6614,7 @@ var $author$project$Main$toSvgLinesWithHover = F2(
 			},
 			lines);
 		if (_v0.$ === 'Nothing') {
-			return $author$project$Main$toSvgLines(lines);
+			return A2($author$project$Main$toSvgLines, $author$project$Main$ActiveLine, lines);
 		} else {
 			var selection = _v0.a;
 			var selected = A2($author$project$Main$createSvgLine, $author$project$Main$HoverLine, selection);
@@ -6609,7 +6626,7 @@ var $author$project$Main$toSvgLinesWithHover = F2(
 				lines);
 			return _Utils_ap(
 				selected,
-				$author$project$Main$toSvgLines(rest));
+				A2($author$project$Main$toSvgLines, $author$project$Main$PassiveLine, rest));
 		}
 	});
 var $author$project$Main$toSvgLinesWithSelection = F2(
@@ -6621,7 +6638,7 @@ var $author$project$Main$toSvgLinesWithSelection = F2(
 			},
 			lines);
 		if (_v0.$ === 'Nothing') {
-			return $author$project$Main$toSvgLines(lines);
+			return A2($author$project$Main$toSvgLines, $author$project$Main$ActiveLine, lines);
 		} else {
 			var selection = _v0.a;
 			var selected = A2($author$project$Main$createSvgLine, $author$project$Main$SelectedLine, selection);
@@ -6633,7 +6650,7 @@ var $author$project$Main$toSvgLinesWithSelection = F2(
 				lines);
 			return _Utils_ap(
 				selected,
-				$author$project$Main$toSvgLines(rest));
+				A2($author$project$Main$toSvgLines, $author$project$Main$PassiveLine, rest));
 		}
 	});
 var $author$project$Main$getSvgElements = function (model) {
@@ -6646,14 +6663,16 @@ var $author$project$Main$getSvgElements = function (model) {
 		case 'Drawing':
 			var startPos = editor.a.startPos;
 			var lines = $author$project$Main$getLinesFromHistory(history);
-			var svgLines = $author$project$Main$toSvgLines(lines);
+			var svgLines = A2($author$project$Main$toSvgLines, $author$project$Main$PassiveLine, lines);
 			var currentLine = A2($author$project$Main$createCurrentDrawingLine, startPos, pos);
 			return A2($elm$core$List$cons, currentLine, svgLines);
 		case 'Dragging':
 			var id = editor.a.id;
 			var point = editor.a.point;
 			var lines = $author$project$Main$getLinesFromHistory(history);
-			var svgLines = $author$project$Main$toSvgLines(
+			var svgLines = A2(
+				$author$project$Main$toSvgLines,
+				$author$project$Main$PassiveLine,
 				A2(
 					$elm$core$List$filter,
 					function (line) {
@@ -6676,7 +6695,7 @@ var $author$project$Main$getSvgElements = function (model) {
 			}
 		case 'Default':
 			var lines = $author$project$Main$getLinesFromHistory(history);
-			var svgLines = $author$project$Main$toSvgLines(lines);
+			var svgLines = A2($author$project$Main$toSvgLines, $author$project$Main$ActiveLine, lines);
 			return svgLines;
 		case 'Hovering':
 			var id = editor.a.id;
