@@ -595,8 +595,6 @@ Error message and password prompt
 
 <li>Metamagical Programming with Expression Trees (NDC Oslo 2014)</li>
 
-<li>Modelling with Functions: The Escher School of Fish (DDD Foundations 2023, 7. Jun)</li>
-
 <li>Modular API design with DDD and Hypermedia (MicroCPH 2020, 11.-12. May)</li>
 
 <li>Monoids for everybody (Booster 2020, 18.-20. Mar)</li>
@@ -768,6 +766,8 @@ Error message and password prompt
 <li>The Escher School of Fish Workshop (Booster 2023, 29.-31. Mar)</li>
 
 <li>The Escher School of Fish Workshop (draft)</li>
+
+<li>The Escher School of Fish: Modelling with Functions (DDD Foundations 2023, 7. Jun)</li>
 
 <li>The problem with REST (draft)</li>
 
@@ -9764,7 +9764,7 @@ Ever wanted to control some hardware from your existing .NET application? Wanted
 <div created="20190319093725094" modified="20220930161839019" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20230109190649834" list="[[Modelling with Functions: The Escher School of Fish (DDD Foundations 2023, 7. Jun)]] [[The Escher School of Fish Workshop (Booster 2023, 29.-31. Mar)]] [[Picture combinators and recursive fish (Oslo Elm Day 2019, 16. Feb)]] [[Picture combinators and recursive fish (Lambda Trondheim, 20. Mar)]] [[Picture combinators and recursive fish (BitShift Bergen, 13. Mar)]] [[Submitted talks pending notification 2023]] [[Upcoming accepted talks 2023]] [[Delivered talks]] [[Recorded talks]] [[Rejected talks]] [[Cancelled talks]] Drafts" modified="20230109191213449" title="$:/StoryList">
+<div created="20230109190649834" list="[[Submitted talks pending notification 2023]] [[The Escher School of Fish: Modelling with Functions (DDD Foundations 2023, 7. Jun)]] [[Upcoming accepted talks 2023]] [[Delivered talks]] [[Recorded talks]] [[Rejected talks]] [[Cancelled talks]] Drafts" modified="20230109195701544" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190320213551758" modified="20220907180947227" title="$:/temp/advancedsearch">
@@ -12398,19 +12398,6 @@ Recording: https://vimeo.com/97514516
 
 If the world of fantasy has taught us anything, it is that the oldest magic is the most powerful magic. In the realm of computing, no magic is more ancient than the one that arises from the duality of code and data. The ability to treat code as data and data as code is at the core of LISPs legendary meta-programming capabilities, but the idea is even older than that - it echoes the spectre of von Neumann himself! With expression trees, the enabling technology behind LINQ and the dynamic language runtime, .NET programmers have access to a beautiful programming model to control this ancient magic. In this demo-driven session, we will start with some simple examples to explain the basics of working with expression trees. However, we will quickly progress to something more useful and powerful, as we consider how to build a DSL for expressing rules to be compiled and evaluated at runtime. We will end up with a complete real-world example using data validation in an ASP.NET MVC application that would be infeasible without the capabilities offered by expression trees.</pre>
 </div>
-<div conference="DDD Foundation" created="20230109190911772" date="2023" duration="50m" modified="20230109192654435" tags="ddd-foundations 2023 live-coding talk submitted functional-geometry escher" title="Modelling with Functions: The Escher School of Fish (DDD Foundations 2023, 7. Jun)" year="2023">
-<pre>! Modelling with Functions: The Escher School of Fish 
-
-Conference: DDD Foundations 2023 (7. June)
-
-Status: 
-
-* Submitted (9. January)
-
-!! Abstract 
-
-This is a live coding session based on a classic 1982 paper by Peter Henderson. The paper shows the decomposition and reconstruction of Escher's woodcutting &quot;Square Limit&quot;, a beautiful recursive tessellation of interleaving fish, using functional programming. The central idea is to create an abstraction that is not mere passive data, but rather a function that accepts a set of constraints and adjusts to those constraints as appropriate. In this case, we model a picture as a function that accepts a bounding box as input, and renders itself correspondingly. We then define a small set of higher-order functions that operate on pictures - transforming them and composing them into more complex pictures. These functions are sufficient to create a replica of Escher's Square Limit in the browser. The approach is particularly appealing for producing beautiful recursive visuals, but also lends itself to such mundane tasks as fitting circuits on a circuit board.</pre>
-</div>
 <div conference="MicroCPH" created="20191228234454590" date="2020.05.11" duration="45" modified="20200123200552696" status="Submitted" tags="2020 rejected microcph ddd submitted hypermedia talk" title="Modular API design with DDD and Hypermedia (MicroCPH 2020, 11.-12. May)" year="2020">
 <pre>! Modular API design with DDD and Hypermedia
 
@@ -13698,6 +13685,19 @@ Status: Draft.
 This workshop is based on the classic 1982 paper &quot;Functional Geometry&quot; by Peter Henderson. The paper shows the decomposition and reconstruction of Escher's woodcutting &quot;Square Limit&quot;, a beautiful recursive tesselation of interleaving fish, using functional programming. We will use ~JavaScript as our implementation language as we follow in Henderson's footsteps to create our own Square Limit as an SVG. We'll see that framing a problem in the right way enables us to solve it in interesting and elegant ways. The problem in this case is the transformation and combination of pictures to form new and more complex pictures. If we think of an picture not as a collection of colored pixels but rather as a function from a bounding rectangle to a rendering, we can define simple yet powerful picture combinators that allow us accomplish our task with ease and elegance.
 
 You do not have to be an experienced ~JavaScript programmer to follow this workshop. The tool requirements are minimal. All you need is an editor and a browser.</pre>
+</div>
+<div conference="DDD Foundation" created="20230109190911772" date="2023" duration="50m" modified="20230109195712186" tags="ddd-foundations 2023 live-coding talk submitted functional-geometry escher" title="The Escher School of Fish: Modelling with Functions (DDD Foundations 2023, 7. Jun)" year="2023">
+<pre>! The Escher School of Fish: Modelling with Functions
+
+Conference: DDD Foundations 2023 (7. June)
+
+Status: 
+
+* Submitted (9. January)
+
+!! Abstract 
+
+This is a live coding session based on a classic 1982 paper by Peter Henderson. The paper shows the decomposition and reconstruction of Escher's woodcutting &quot;Square Limit&quot;, a beautiful recursive tessellation of interleaving fish, using functional programming. The central idea is to create an abstraction that is not mere passive data, but rather a function that accepts a set of constraints and adjusts to those constraints as appropriate. In this case, we model a picture as a function that accepts a bounding box as input, and renders itself correspondingly. We then define a small set of higher-order functions that operate on pictures - transforming them and composing them into more complex pictures. These functions are sufficient to create a replica of Escher's Square Limit in the browser. The approach is particularly appealing for producing beautiful recursive visuals, but also lends itself to such mundane tasks as fitting circuits on a circuit board.</pre>
 </div>
 <div created="20210601170322162" modified="20220421113548358" tags="draft" title="The problem with REST (draft)">
 <pre>The problem with REST isn't that it is ambiguous or poorly defined. Read the thesis.
