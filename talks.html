@@ -543,6 +543,8 @@ Error message and password prompt
 
 <li>F# with Einar Høst (NDC Meetup, 11. Nov)</li>
 
+<li>Feed the RNG</li>
+
 <li>Fostering collaboration with hand-written API contracts</li>
 
 <li>Fostering collaboration with hand-written API contracts (JavaZone 2022, 7.-8. Sep)</li>
@@ -9863,7 +9865,7 @@ Ever wanted to control some hardware from your existing .NET application? Wanted
 <div created="20190319093725094" modified="20230316121704667" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20240306173042165" list="[[Upcoming accepted talks 2024]] [[Submitted talks pending notification 2024]] [[Recorded talks]] [[Rejected talks]] [[Cancelled talks]] Drafts" modified="20240306213828037" title="$:/StoryList">
+<div created="20240306215406842" list="[[Upcoming accepted talks 2024]] [[Submitted talks pending notification 2024]] [[Delivered talks]] [[Recorded talks]] [[Rejected talks]] [[Cancelled talks]] Drafts" modified="20240306215507280" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20190320213551758" modified="20230408150420894" title="$:/temp/advancedsearch">
@@ -10598,7 +10600,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191110145619687" dependents="" description="Basic theme" modified="20191110145619687" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.19/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.19/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.19">
 <pre></pre>
 </div>
-<div created="20190319085237140" modified="20240304092448821" title="$:/temp/search">
+<div created="20190319085237140" modified="20240306215558732" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20191110145619598" modified="20191110145619598" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.19/index.html" url="https://tiddlywiki.com/library/v5.1.19/index.html">
@@ -12115,6 +12117,14 @@ F#'s type system is made of Mithril! It is much lighter, stronger and more flexi
 !! Speaker
 
 Einar W. Høst is a .NET consultant, programmer, modeller and technical architect at Computas. He writes code in admiration and respect of the djinns of the computer, preferably in F#. F# allows him to write succinct and correct code that focuses on the domain rather than the mundane, the essence rather than the accidental. He works to spread the joy of working with F# as a course instructor for ~ProgramUtvikling.</pre>
+</div>
+<div created="20240306215417149" modified="20240306215630664" tags="lightning-talk 2024 draft" title="Feed the RNG">
+<pre>!! Abstract 
+
+We all have something that's unique, which is the combination of who we are and the random events of our lives. We should use that to our benefit. 
+
+I think we can ramp up this effect by deliberately seeking odd influences and varied experiences. I'm not saying I'm very good at it, but I try in my way. For instance, I try to make a point of checking out all recommendations for books that I haven't heard of before. I have the idea that the more weird ingredients I put into my skull, the greater the chance for serendipitous effects, and the more likely that I'll have something original to say that's worth listening to. 
+</pre>
 </div>
 <div conference="" created="20220425193110554" date="" duration="" modified="20220426172657028" status="Draft" tags="talk draft" title="Fostering collaboration with hand-written API contracts" year="">
 <pre>Most API documentation is of terrible quality. Why is this? One obvious candidate reason is lack of contact between the creators and the users of an API. This disconnect is made worse by the fact that the API documentation is owned entirely by creators of the API, with slow and indirect feedback, if any, from users. It is common to use tools to generate API documentation from the running API itself, which means that it is completely coupled to the implementation, and also resides - in indirect, ephemeral form - in the repository owned by the API creators. By switching from runtime-generated to handwritten API documentation, we have found that a number of benefits follow. The first category of benefits is practical: it is easier to express the contract directly as opposed to indirectly through reflection. This leads directly to better, more precise contracts, and no need to write brittle and obtuse plug-ins to make the API output the documentation we want. The second one is organizational: by making the contract into an actual document, it gains independence. It no longer needs to reside in the same repository as the API implementation. It can be moved to neutral ground, with shared ownership. Moreover, it becomes editable, which means that API creators can invite users to co-author it. It becomes easy to draft alternative solutions to problems, as opposed to the creators serving the users a poorly documented, finished solution that may or may not match their needs. Our experience indicates that hand-writing API contracts does not only lead to vastly improved quality of documentation, but improved API design as well.</pre>
