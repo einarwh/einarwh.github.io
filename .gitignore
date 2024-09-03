@@ -3,3 +3,4 @@ books.html_backup/*
 oppskrifter.html_backup/*
 
 **/.DS_Store
+node_modules/*
