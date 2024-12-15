@@ -6524,6 +6524,13 @@ var $author$project$Aoc15$updateTogglePlay = function (model) {
 		model,
 		{paused: !model.paused});
 };
+var $author$project$Aoc15$updateToggleWide = function (model) {
+	var wide = !model.wide;
+	var m = $author$project$Aoc15$initModel(model.dataSource);
+	return _Utils_update(
+		m,
+		{wide: wide});
+};
 var $author$project$Aoc15$update = F2(
 	function (msg, model) {
 		switch (msg.$) {
@@ -6555,6 +6562,10 @@ var $author$project$Aoc15$update = F2(
 				return _Utils_Tuple2(
 					$author$project$Aoc15$updateTogglePlay(model),
 					$elm$core$Platform$Cmd$none);
+			case 'ToggleWide':
+				return _Utils_Tuple2(
+					$author$project$Aoc15$updateToggleWide(model),
+					$elm$core$Platform$Cmd$none);
 			case 'UseInput':
 				return _Utils_Tuple2(
 					$author$project$Aoc15$initModel($author$project$Aoc15$Input),
@@ -6577,6 +6588,7 @@ var $author$project$Aoc15$Faster = {$: 'Faster'};
 var $author$project$Aoc15$Slower = {$: 'Slower'};
 var $author$project$Aoc15$Step = {$: 'Step'};
 var $author$project$Aoc15$TogglePlay = {$: 'TogglePlay'};
+var $author$project$Aoc15$ToggleWide = {$: 'ToggleWide'};
 var $author$project$Aoc15$UseInput = {$: 'UseInput'};
 var $author$project$Aoc15$UseLarger = {$: 'UseLarger'};
 var $author$project$Aoc15$UseSituation = {$: 'UseSituation'};
@@ -6988,6 +7000,37 @@ var $author$project$Aoc15$view = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Step')
+									]))
+							]))
+					])),
+				A2(
+				$elm$html$Html$tr,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$td,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$align('center')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$input,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$type_('checkbox'),
+										$elm$html$Html$Events$onClick($author$project$Aoc15$ToggleWide),
+										$elm$html$Html$Attributes$checked(model.wide)
+									]),
+								_List_Nil),
+								A2(
+								$elm$html$Html$label,
+								_List_Nil,
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Wide')
 									]))
 							]))
 					])),
